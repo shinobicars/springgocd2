@@ -12,10 +12,16 @@ pipelines:
     stages:
       - defaultStage: # name of stage
           clean_workspace: true
-          tasks:
-            - exec:
-                command: '/bin/bash'
-                arguments:
-                  - '-c'
-                  - './gradlew clean build -i'
-                working_directory: template
+          jobs:
+            defaultJob:
+              tasks:
+                - exec:
+                    command: '/bin/bash'
+                    arguments:
+                      - '-c'
+                      - './gradlew clean build -i'
+                    working_directory: template
+              artifacts:
+                - build:
+                    source: 'build/libs/**'
+                    destination: 'bin'
