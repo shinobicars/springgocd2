@@ -1,0 +1,13 @@
+# Output
+build/
+out/
+
+# Tooling
+.gradle/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.DS_Store
+*.iws

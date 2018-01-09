@@ -1,0 +1,21 @@
+#ci.gocd.yaml
+pipelines:
+  springGocd:
+    group: defaultGroup
+    materials:
+      template:
+        auto_update: true
+        destination: template
+        git: 'git@github.com:shinobicars/springgocd.git'
+        branch: 'master'
+
+    stages:
+      - defaultStage: # name of stage
+          clean_workspace: true
+          tasks:
+            - exec:
+                command: '/bin/bash'
+                arguments:
+                  - '-c'
+                  - './gradlew clean build -i'
+                working_directory: template
