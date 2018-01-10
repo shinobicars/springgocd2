@@ -33,5 +33,4 @@ pipelines:
                    pipeline: springGocd
                    stage: defaultStage
                    job: defaultJob
-                   source: bin/
-                   destination: template/bin/
+                   source: template/
