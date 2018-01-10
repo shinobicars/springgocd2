@@ -23,5 +23,5 @@ pipelines:
                     working_directory: template
               artifacts:
                 - build:
-                    source: 'build/libs/**'
+                    source: 'template/build/libs/**'
                     destination: 'bin'
