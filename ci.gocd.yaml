@@ -24,7 +24,6 @@ pipelines:
               artifacts:
                 - build:
                     source: 'template/build/libs/**'
-                    destination: 'bin'
       - anotherStage: # name of stage
           clean_workspace: true
           jobs:
