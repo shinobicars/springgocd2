@@ -25,3 +25,14 @@ pipelines:
                 - build:
                     source: 'template/build/libs/**'
                     destination: 'bin'
+      - anotherStage: # name of stage
+          clean_workspace: true
+          jobs:
+            defaultJob:
+              tasks:
+               - fetch:
+                   pipeline: springGocd
+                   stage: defaultStage
+                   job: defaultJob
+                   source: bin/
+                   destination: bin/
