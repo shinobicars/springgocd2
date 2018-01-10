@@ -35,4 +35,4 @@ pipelines:
                    stage: defaultStage
                    job: defaultJob
                    source: bin/
-                   destination: bin/
+                   destination: template/bin/
